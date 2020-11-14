@@ -1,24 +1,38 @@
 # coursera
 Programming Assignment 2: Lexical Scoping 
+Assignment: Caching the Inverse of a Matrix
+
+Hello, with this code we can:
+1. Get a matrix
+2. set the inverted matrix o matrix1 (any matrix)
+3. Get the inverser matrix of any cachet matrix
 
 
-Hello, with this proyect we can create a path to read a test csv files repository with n samples and obtain the quintile of test scores. First the function creates a vector caching with the total scores and then the second function calculates que quintile score for all the files and skip the one by one calculate
-
-
-fullscorevector <- function(x = numeric ()) {
-  m <- NULL
+makeCacheMatrix <- function(x = matrix()) {
+  matrix1 <- NULL
   set <- function(y){
-         x <<- y
-         m <<- NULL
+    x <<- y
+    Inverse_matrix <<- NULL
+  }
+  get <- function() x
+  set_inverse <- function(solveMatrix) {
+  Inverse_matrix <- inv(matrix1) 
+  Inverted_matrix <<- solveMatrix}
+  getInverse <- function() Inverted_matrix 
+  list(set = set, get = get, set_inverse = set_inverse, getInverse = getInverse)
 }
-get <- function() x
-setquintile <- function (directory, totalscore, id = 1:500) {
-               subset <- list.files(path = "C:/Users/nicolas.reyes/Desktop/R/R/testfiles", full.names = TRUE)
-               data <- data.frame()
-               for(i in 1:500) {
-               data <- rbind(data, read.csv(testfiles[i]))}
-               sapply(data, quantile) m <<- quintile }
-getquintile <- function()m
-list(set = set, get = get, setquintile = setquintile, getquintle = getquintile)
-}
+
+Assignment: Ge the inverse matrix
+Then with this coded we can:
+1. If there are a inverse matrix get it
+1. If there is not a inverted get the inverse matrix of a cached matrix
+
+cacheSolve <- function(makeCacheMatrix x, ...) {
+  MyInverse <- x$getInverse()
+    if(!is.null(matrix1)){
+     return(myInverse)
+  }
+  data <- x$get()
+  inverted_matx <- x$getInverse(myInv)
+ }
 
