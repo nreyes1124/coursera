@@ -16,8 +16,6 @@ makeCacheMatrix <- function(x = matrix()) {
   }
   get <- function() x
   set_inverse <- function(solveMatrix) {
-  Inverse_matrix <- inv(matrix1) 
-  Inverted_matrix <<- solveMatrix}
   getInverse <- function() Inverted_matrix 
   list(set = set, get = get, set_inverse = set_inverse, getInverse = getInverse)
 }
@@ -27,7 +25,7 @@ Then with this coded we can:
 1. If there are a inverse matrix get it
 1. If there is not a inverted get the inverse matrix of a cached matrix
 
-cacheSolve <- function(makeCacheMatrix x, ...) {
+cacheSolve <- function(x, ...) {
   MyInverse <- x$getInverse()
     if(!is.null(matrix1)){
      return(myInverse)
